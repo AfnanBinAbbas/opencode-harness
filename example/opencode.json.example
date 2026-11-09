@@ -1,0 +1,82 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "mimo/mimo-v2.6-flash",
+  "small_model": "mimo/mimo-v2.6-flash",
+  "provider": {
+    "mimo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "MiMo",
+      "options": {
+        "baseURL": "https://token-plan-sgp.xiaomimimo.com/v1",
+        "apiKey": "<YOUR_API_KEY>"
+      },
+      "models": {
+        "mimo-v2.6-pro": {
+          "name": "mimo-v2.6-pro",
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "mimo-v2.6-flash": {
+          "name": "mimo-v2.6-flash",
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (Local Uncensored)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen-ablit-7b:latest": {
+          "name": "Qwen 7B Abliterated (Local)"
+        },
+        "huihui_ai/qwen2.5-coder-abliterate:7b": {
+          "name": "Qwen 2.5 Coder Abliterated 7B (Local)"
+        },
+        "kiwi_kiwi/fable-qwen2.5-abliterated:3b": {
+          "name": "Fable Qwen 2.5 Abliterated 3B (Local)"
+        },
+        "qwen2.5-coder:1.5b": {
+          "name": "Qwen 2.5 Coder 1.5B (Local)"
+        },
+        "osint-tuned-v3:latest": {
+          "name": "OSINT Tuned v3 (Local)"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "openosint": {
+      "type": "local",
+      "command": [
+        "<home>/OpenOSINT/OpenOSINT-venv/bin/openosint-mcp"
+      ],
+      "enabled": true
+    }
+  }
+}
